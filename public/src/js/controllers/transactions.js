@@ -135,6 +135,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     Transaction.get({
       txId: txid
     }, function(tx) {
+      console.log("tx=" + tx)
       $rootScope.titleDetail = tx.txid.substring(0,7) + '...';
       $rootScope.flashMessage = null;
       $scope.tx = tx;
