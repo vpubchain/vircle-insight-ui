@@ -11,6 +11,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
   var COIN = 100000000;
 
   var _aggregateItems = function(items) {
+    console.log("items=" + items);
     if (!items) return [];
 
     var l = items.length;
@@ -86,6 +87,7 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     }
 
     angular.forEach(tmp, function(v) {
+      console.log(v);
       v.value    = v.value || parseInt(v.valueSat) / COIN;
       ret.push(v);
     });
