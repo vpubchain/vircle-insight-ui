@@ -11,7 +11,6 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
   var COIN = 100000000;
 
   var _aggregateItems = function(items) {
-    console.log("items=" + items);
     if (!items) return [];
 
     var l = items.length;
@@ -87,7 +86,6 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     }
 
     angular.forEach(tmp, function(v) {
-      console.log(v);
       v.value    = v.value || parseInt(v.valueSat) / COIN;
       ret.push(v);
     });
@@ -135,9 +133,6 @@ function($scope, $rootScope, $routeParams, $location, Global, Transaction, Trans
     Transaction.get({
       txId: txid
     }, function(tx) {
-      alert("1111111");
-      alert(tx)
-      console.log("tx=" + tx)
       $rootScope.titleDetail = tx.txid.substring(0,7) + '...';
       $rootScope.flashMessage = null;
       $scope.tx = tx;
